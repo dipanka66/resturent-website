@@ -1,0 +1,157 @@
+<ul class="menu">
+  <li><a href="index.html" class="nav-item nav-link active">Home</a></li>
+  <li><a href="about.html" class="nav-item nav-link">About</a></li>
+  <li><a href="service.html" class="nav-item nav-link">Service</a></li>
+  <li><a href="menu.html" class="nav-item nav-link">Menu</a></li>
+  <li><a href="contact.html" class="nav-item nav-link">Contact</a></li>
+
+  <li>
+    <div class="dropdown">
+      <button class="dropbtn">Pages
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="booking.html" class="dropdown-item">Booking</a>
+        <a href="team.html" class="dropdown-item">Our Team</a>
+      </div>
+  </li>
+</ul>
+
+<ul class="login-menu">
+  <li><a href="booking.html">Book A Table</a></li>
+</ul>
+
+<style>
+  /* menu bar */
+  .navbar {
+    background-color: #ffffff;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: larger;
+    align-items: center;
+    letter-spacing: 3px;
+    }
+
+    .login-menu li a{
+      text-decoration: none;
+    }
+    
+    .navbar .menu,
+    .navbar .login-menu {
+      display: flex;
+      text-decoration: none;
+  }
+
+  .navbar ul {
+    list-style: none;
+  }
+
+  .navbar .menu a,
+  .navbar .login-menu li {
+    margin-right: 38px;
+    text-decoration: none;
+
+  }
+
+  /* The dropdown container */
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+
+  /* Dropdown button */
+  .dropdown .dropbtn {
+    font-weight: 700;
+    font-size: large;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  /* Add a red background color to navbar links on hover */
+  .navbar a:hover,
+  .dropdown:hover .dropbtn {
+    color: #ff0000;
+  }
+
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  /* Add a grey background color to dropdown links on hover */
+  .dropdown-content a:hover {
+    color: #2aff04;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+
+<script>
+  /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropbtn")) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains("show")) {
+          openDropdown.classList.remove("show");
+        }
+      }
+    }
+  };
+
+  const li = document.querySelectorAll(".menu li")[0];
+  li.addEventListener("click", (e) => {
+    e.preventDefault();
+    alert("Home Clicked");
+    window.location.href = "/index.html";
+  });
+
+
+  // When the user scrolls the page, execute myFunction
+  window.onscroll = function () { myFunction() };
+
+  // Get the navbar
+  var navbar = document.getElementById("navbar");
+
+  // Get the offset position of the navbar
+  var sticky = navbar.offsetTop;
+
+  // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+
+</script>

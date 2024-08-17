@@ -1,2 +1,3 @@
-# resturent-website
-this a resturent website I make using HTML CSS. It take some data from the users and send it to the google spreed sheet. In this project I add menu list where user can order online but the backend part is not impliment. The only frontend part is this.
+# How to Include one HTML file into Another Without any Framework or Library
+This projects shows how to include one HTML file into another without and library or framework in order to avoid code repitition.
+It also shows how to make js file stiched in from another file into HTML file make work.
